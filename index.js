@@ -45,3 +45,30 @@ const bookStore = {
 
 // Write your code here!
 
+//creating a variable to hold the header element
+const bookStoreTitle = document.getElementById("header");
+const bookList = document.getElementById("book-list");
+//setting the name of the book store to the header element
+bookStoreTitle.textContent = bookStore.name;
+
+//loop through the books array and create elements for each book
+for (const book of bookStore.books){
+
+
+  const bookContainer = document.createElement("li");
+  const bookTitle = document.createElement("h3");
+  const bookAuthor = document.createElement("p");
+  const bookImage = document.createElement("img");
+  
+  bookTitle.textContent = book.title;
+  bookAuthor.textContent = book.author;
+  bookImage.src = book.imageUrl;
+
+  bookContainer.append(bookTitle);
+  bookContainer.append(bookAuthor);
+  bookContainer.append(bookImage);
+
+  bookList.append(bookContainer);
+}
+
+
